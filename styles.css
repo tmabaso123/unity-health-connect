@@ -68,7 +68,7 @@ main {
     flex: 1; /* Allow main to grow and push the footer to the bottom */
     padding: 2em;
     text-align: center;
-    background-color: white; /* Another soft green shade */
+    background-color: white;
     margin: 1em auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -79,10 +79,14 @@ main {
 main h1, main h2, main h3 {
     color: green; /* Consistent color for headings */
 }
+main h1 {
+    font-size: 2.5em; /* Increase the font size of the h1 element */
+    text-align: center; /* Center-align the h1 element */
+}
 
 main h2 {
     margin-top: 2em;
-    font-size: 1.8em;
+    font-size: 1.4em;
 }
 
 main h3 {
