@@ -5,6 +5,9 @@ body {
     padding: 0;
     background-color: #809d73;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 header {
@@ -23,8 +26,21 @@ header .container {
     padding: 0 20px;
 }
 
+header .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header .logo {
-    height: 50px;
+    height: 100px;
+    width: 100px;
+}
+
+header .logo-text {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 nav ul {
@@ -49,6 +65,7 @@ nav ul li a:hover {
 }
 
 main {
+    flex: 1; /* Allow main to grow and push the footer to the bottom */
     padding: 2em;
     text-align: center;
     background-color: white; /* Another soft green shade */
@@ -59,14 +76,26 @@ main {
     color: green;
 }
 
-main h1 {
-    color: green; /* Soft blue shade for contrast */
-    margin-bottom: 0.5em;
+main h1, main h2, main h3 {
+    color: green; /* Consistent color for headings */
+}
+
+main h2 {
+    margin-top: 2em;
+    font-size: 1.8em;
+}
+
+main h3 {
+    margin-top: 1.5em;
+    font-size: 1.4em;
 }
 
 main p {
     font-size: 1.2em;
     margin-bottom: 1em;
+    text-align: left;
+    max-width: 800px;
+    margin: 1em auto;
 }
 
 main .btn {
@@ -89,7 +118,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
+    position: relative; /* Use relative positioning */
     width: 100%;
-    bottom: 0;
 }
