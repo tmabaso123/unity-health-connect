@@ -15,7 +15,22 @@
             // Show the selected section
             document.getElementById(sectionId).style.display = 'block';
         }
+
+        function toggleFeature(featureId) {
+            const feature = document.getElementById(featureId);
+            const description = feature.querySelector('.feature-description');
+            if (description.style.display === 'block') {
+                description.style.display = 'none';
+            } else {
+                description.style.display = 'block';
+            }
+        }
     </script>
+    <style>
+        .feature-description {
+            display: none;
+        }
+    </style>
 </head>
 <body onload="showSection('home')">
 <header>
@@ -41,7 +56,7 @@
         <h1>Welcome to Unity Health Connect</h1>
         <p>Improving access to healthcare and promoting well-being in underprivileged communities.</p>
         <a href="javascript:void(0)" class="btn" onclick="showSection('about')">Learn More</a>
-        <img src="home-page.jpg" alt="Good Health and Well-being" class="home-image">>
+        <img src="home-page.jpg" alt="Good Health and Well-being" class="home-image">
     </section>
     <section id="about">
         <h2>About Us</h2>
@@ -54,29 +69,37 @@
     <section id="features">
         <h2>Our Features</h2>
         <div class="features-container">
-            <div class="feature">
+            <div class="feature" id="healthcare">
                 <img src="healthcare-icon.png" alt="Healthcare Delivery Tracking Icon" class="feature-icon">
                 <h3>Healthcare Delivery Tracking</h3>
-                <p>For department of health to efficiently monitor and manage healthcare delivery across diverse communities.</p>
-                <a href="#" class="btn">Learn More</a>
+                <div class="feature-description">
+                    <p>For the department of health to efficiently monitor and manage healthcare delivery across diverse communities.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('healthcare')">Learn More</a>
             </div>
-            <div class="feature">
+            <div class="feature" id="mental-health">
                 <img src="mental-health-icon.png" alt="Free Mental Health Screening and Diagnosis Icon" class="feature-icon">
                 <h3>Free Mental Health Screening and Diagnosis</h3>
-                <p>Access to tools for mental health assessment and diagnosis, providing valuable insights and guidance to improve mental well-being.</p>
-                <a href="#" class="btn">Learn More</a>
+                <div class="feature-description">
+                    <p>Access to tools for mental health assessment and diagnosis, providing valuable insights and guidance to improve mental well-being.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('mental-health')">Learn More</a>
             </div>
-            <div class="feature">
+            <div class="feature" id="social-wellbeing">
                 <img src="social-wellbeing-icon.png" alt="Social Well-being Initiative Icon" class="feature-icon">
                 <h3>Social Well-being Initiative</h3>
-                <p>Sponsors and users can organize and participate in social initiatives such as food drives and soup kitchens, and fitness classes fostering a sense of solidarity and support.</p>
-                <a href="#" class="btn">Learn More</a>
+                <div class="feature-description">
+                    <p>Sponsors and users can organize and participate in social initiatives such as food drives and soup kitchens, and fitness classes fostering a sense of solidarity and support.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('social-wellbeing')">Learn More</a>
             </div>
-            <div class="feature">
+            <div class="feature" id="fitness">
                 <img src="fitness-icon.png" alt="Fitness Exercises Icon" class="feature-icon">
                 <h3>Fitness Exercises</h3>
-                <p>Availability of various fitness routines and exercises tailored to different levels and interests, promoting physical health and active lifestyles.</p>
-                <a href="#" class="btn">Learn More</a>
+                <div class="feature-description">
+                    <p>Availability of various fitness routines and exercises tailored to different levels and interests, promoting physical health and active lifestyles.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('fitness')">Learn More</a>
             </div>
         </div>
     </section>

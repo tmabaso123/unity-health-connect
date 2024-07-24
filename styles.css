@@ -176,6 +176,10 @@ main .btn:hover {
 .feature .btn:hover {
     background: #809d73; /* Another soft green shade */
 }
+.feature-description {
+    display: none;
+}
+
 
 footer {
     background: #333;
