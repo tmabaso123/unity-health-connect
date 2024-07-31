@@ -220,6 +220,14 @@ form button:hover {
     font-size: 0.9em;
     color: #666;
 }
+.questions-list .question p {
+    font-weight: normal; /* Ensure normal weight for the text */
+}
+
+.questions-list .question p span {
+    font-weight: bold; /* Make the question numbers bold */
+}
+
 
 /* Footer Styles */
 footer {
