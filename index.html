@@ -7,35 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         function showSection(sectionId) {
-            // Hide all sections
             document.querySelectorAll('section').forEach(section => {
                 section.style.display = 'none';
             });
-            // Show the selected section
-            const section = document.getElementById(sectionId);
-            section.style.display = 'block';
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function toggleFeature(featureId) {
-            const feature = document.getElementById(featureId);
-            const description = feature.querySelector('.feature-description');
-            if (description.style.display === 'block') {
-                description.style.display = 'none';
-            } else {
-                description.style.display = 'block';
-            }
+            document.getElementById(sectionId).style.display = 'block';
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
 
         window.onload = function() {
             showSection('home');
         }
     </script>
-    <style>
-        .feature-description {
-            display: none;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -70,40 +52,36 @@
         <h3>Community Impact</h3>
         <p>Our proposed solution aims to enhance the health and well-being of underprivileged communities by addressing the root causes of healthcare imbalances. By improving access to healthcare services and addressing socio-economic determinants of health, our initiative will provide substantial and sustainable benefits to these communities, thereby promoting equity and well-being.</p>
     </section>
-    <section id="features" style="display: none;">
+    <section id="features">
         <h2>Our Features</h2>
         <div class="features-container">
-            <div class="feature" id="healthcare">
-                <img src="healthcare-icon.png" alt="Healthcare Delivery Tracking Icon" class="feature-icon">
+            <!-- Feature 1 -->
+            <div class="feature">
+                <img src="healthcare-icon.png" alt="Healthcare Delivery Tracking" class="feature-icon">
                 <h3>Healthcare Delivery Tracking</h3>
-                <div class="feature-description">
-                    <p>For the department of health to efficiently monitor and manage healthcare delivery across diverse communities.</p>
-                </div>
-                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('healthcare')">Learn More</a>
+                <p>For the department of health to efficiently monitor and manage healthcare delivery across diverse communities.</p>
+                <a href="healthcare.html" class="btn">Learn More</a>
             </div>
-            <div class="feature" id="mental-health">
-                <img src="mental-health-icon.png" alt="Free Mental Health Screening and Diagnosis Icon" class="feature-icon">
-                <h3>Free Mental Health Screening and Diagnosis</h3>
-                <div class="feature-description">
-                    <p>Access to tools for mental health assessment and diagnosis, providing valuable insights and guidance to improve mental well-being.</p>
-                </div>
-                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('mental-health')">Learn More</a>
+            <!-- Feature 2 -->
+            <div class="feature">
+                <img src="mental-health-icon.png" alt="Free Mental Health Screening" class="feature-icon">
+                <h3>Free Mental Health Screening</h3>
+                <p>Accessible mental health screening for everyone to identify and address mental health issues early.</p>
+                <a href="mental-health.html" class="btn">Learn More</a>
             </div>
-            <div class="feature" id="social-wellbeing">
-                <img src="social-wellbeing-icon.png" alt="Social Well-being Initiative Icon" class="feature-icon">
+            <!-- Feature 3 -->
+            <div class="feature">
+                <img src="social-wellbeing-icon.png" alt="Social Well-being Initiative" class="feature-icon">
                 <h3>Social Well-being Initiative</h3>
-                <div class="feature-description">
-                    <p>Sponsors and users can organize and participate in social initiatives such as food drives and soup kitchens, and fitness classes fostering a sense of solidarity and support.</p>
-                </div>
-                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('social-wellbeing')">Learn More</a>
+                <p>Programs designed to enhance social well-being and community support systems.</p>
+                <a href="social-wellbeing.html" class="btn">Learn More</a>
             </div>
-            <div class="feature" id="fitness">
-                <img src="fitness-icon.png" alt="Fitness Exercises Icon" class="feature-icon">
+            <!-- Feature 4 -->
+            <div class="feature">
+                <img src="fitness-icon.png" alt="Fitness Exercises" class="feature-icon">
                 <h3>Fitness Exercises</h3>
-                <div class="feature-description">
-                    <p>Availability of various fitness routines and exercises tailored to different levels and interests, promoting physical health and active lifestyles.</p>
-                </div>
-                <a href="javascript:void(0)" class="btn" onclick="toggleFeature('fitness')">Learn More</a>
+                <p>Guided fitness exercises to promote physical health and wellness.</p>
+                <a href="fitness.html" class="btn">Learn More</a>
             </div>
         </div>
     </section>
