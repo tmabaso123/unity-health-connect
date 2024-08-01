@@ -8,6 +8,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url('sdg 3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+
 }
 
 /* Header Styles */
@@ -130,6 +137,7 @@ main .btn:hover {
     border-radius: 8px;
 }
 
+
 /* Form Styles */
 form {
     max-width: 500px;
@@ -173,6 +181,24 @@ form button {
 
 form button:hover {
     background: #5a8d4f;
+}
+.donation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.donation-list li {
+    margin-bottom: 20px;
+}
+
+.feature-donate,
+.feature-volunteer {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto
 }
 
 /* About Us Styles */
@@ -227,6 +253,13 @@ form button:hover {
 .questions-list .question p span {
     font-weight: bold; /* Make the question numbers bold */
 }
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    display: none;
+}
+
 
 
 /* Footer Styles */
