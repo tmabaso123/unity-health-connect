@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Exercises</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #fitnessGif {
+            display: none; /* Initially hide the GIF */
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -24,10 +29,24 @@
 </header>
 <main>
     <h1>Fitness Exercises</h1>
-    <p>Content coming soon...</p>
+    <!-- Button to toggle the GIF visibility -->
+    <button id="toggleButton" class="btn">Click to find exercises you can do</button>
+    <!-- GIF image -->
+    <img id="fitnessGif" src="fitness.gif" alt="Suggested exercises">
 </main>
 <footer>
     <p>&copy; 2024 YourSite. All rights reserved.</p>
 </footer>
+<script>
+    document.getElementById('toggleButton').addEventListener('click', function() {
+        var gif = document.getElementById('fitnessGif');
+        // Toggle the display of the GIF
+        if (gif.style.display === 'none') {
+            gif.style.display = 'block';
+        } else {
+            gif.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
