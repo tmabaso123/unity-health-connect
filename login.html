@@ -24,8 +24,8 @@
 </header>
 <main>
     <section id="login">
-        <h1>Log In</h1>
-        <form action="login-processing.php" method="POST">
+        <h1>Sign Up</h1>
+        <form id="loginForm" action="login-processing.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -39,5 +39,12 @@
 <footer>
     <p>&copy; 2024 Unity Health Connect. All rights reserved.</p>
 </footer>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the traditional way
+        // Assuming form submission is successful, redirect to the home page
+        window.location.href = 'index.html';
+    });
+</script>
 </body>
 </html>
