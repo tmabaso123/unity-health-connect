@@ -15,7 +15,8 @@
         }
 
         window.onload = function() {
-            showSection('home');
+            const sectionId = window.location.hash.substring(1) || 'home';
+            showSection(sectionId);
         }
     </script>
 </head>

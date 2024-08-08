@@ -6,21 +6,38 @@
     <title>Free Mental Health Screening</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .quiz-container {
-            display: none;
-        }
-    </style>
-    <script>
-        function showQuiz() {
-            document.getElementById('quiz-container').style.display = 'block';
-            document.getElementById('intro-container').style.display = 'none';
+        #quizContainer {
+            display: none; /* Initially hide the quiz container */
         }
 
-        function hideQuiz() {
-            document.getElementById('quiz-container').style.display = 'none';
-            document.getElementById('intro-container').style.display = 'block';
+        .btn-green {
+            background-color: #4a773c; /* Green color */
+            color: white;
+            padding: 15px 15px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
         }
-    </script>
+
+        .btn-green:hover {
+            background-color: #648e38;
+        }
+
+        .back-to-features {
+            position: absolute;
+            bottom: 50px; /* Adjust distance from the bottom */
+            right: 500px; /* Adjust distance from the right */
+        }
+
+        #introContainer {
+            position: relative; /* To position the "Back to Features" button inside this container */
+            padding-bottom: 50px; /* Extra padding to ensure content doesn't overlap with the button */
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -31,100 +48,105 @@
         </a>
         <nav>
             <ul>
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#features">Features</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Features</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <main>
-    <div id="intro-container">
+    <div id="introContainer">
         <h1>Free Mental Health Screening</h1>
-        <p>Would you like to take the quiz?</p>
-        <button onclick="showQuiz()">Yes</button>
-        <button onclick="hideQuiz()">No</button>
+        <p>This section covers the mental health screening where you can take a quiz that will help you get a diagnosis on how your mental health is looking.</p>
+        <button id="takeQuizButton" class="btn">Take Quiz</button>
+        <!-- "Back to Features" button styled and positioned -->
+        <button onclick="location.href='index.html#features'" class="btn-green back-to-features">Back to Features</button>
     </div>
-    <div id="quiz-container" class="quiz-container">
+    <div id="quizContainer">
         <h1>Free Mental Health Screening</h1>
         <p>Take our mental health screening to help identify and address any issues early. Answer the following questions:</p>
         <div class="questions-list">
-        <h4>Questions</h4>
-        <div class="question">
-            <p><span>1.</span> Over the last two weeks, how often have you felt down, depressed, or hopeless?</p>
-            <label><input type="radio" name="q1" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q1" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q1" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q1" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>2.</span> Over the last two weeks, how often have you experienced little interest or pleasure in doing things?</p>
-            <label><input type="radio" name="q2" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q2" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q2" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q2" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>3.</span> Over the last two weeks, how often have you had trouble falling or staying asleep, or sleeping too much?</p>
-            <label><input type="radio" name="q3" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q3" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q3" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q3" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>4.</span> Over the last two weeks, how often have you felt tired or had little energy?</p>
-            <label><input type="radio" name="q4" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q4" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q4" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q4" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>5.</span> Over the last two weeks, how often have you had a poor appetite or overeating?</p>
-            <label><input type="radio" name="q5" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q5" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q5" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q5" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>6.</span> Over the last two weeks, how often have you felt bad about yourself – or that you are a failure or have let yourself or your family down?</p>
-            <label><input type="radio" name="q6" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q6" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q6" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q6" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>7.</span> Over the last two weeks, how often have you had trouble concentrating on things, such as reading the newspaper or watching television?</p>
-            <label><input type="radio" name="q7" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q7" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q7" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q7" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>8.</span> Over the last two weeks, how often have you felt restless or fidgety?</p>
-            <label><input type="radio" name="q8" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q8" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q8" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q8" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>9.</span> Over the last two weeks, how often have you felt that you are moving or speaking so slowly that other people could have noticed? Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual?</p>
-            <label><input type="radio" name="q9" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q9" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q9" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q9" value="nearly-every-day"> Nearly every day</label>
-        </div>
-        <div class="question">
-            <p><span>10.</span> Over the last two weeks, how often have you thought that you would be better off dead, or of hurting yourself in some way?</p>
-            <label><input type="radio" name="q10" value="not-at-all"> Not at all</label><br>
-            <label><input type="radio" name="q10" value="several-days"> Several days</label><br>
-            <label><input type="radio" name="q10" value="more-than-half-the-days"> More than half the days</label><br>
-            <label><input type="radio" name="q10" value="nearly-every-day"> Nearly every day</label>
+            <h4>Questions</h4>
+            <!-- Questions -->
+            <div class="question">
+                <p><span>1.</span> Over the last two weeks, how often have you felt down, depressed, or hopeless?</p>
+                <label><input type="radio" name="q1" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q1" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q1" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q1" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>3.</span> Over the last two weeks, how often have you had trouble falling or staying asleep, or sleeping too much?</p>
+                <label><input type="radio" name="q3" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q3" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q3" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q3" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>4.</span> Over the last two weeks, how often have you felt tired or had little energy?</p>
+                <label><input type="radio" name="q4" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q4" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q4" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q4" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>5.</span> Over the last two weeks, how often have you had a poor appetite or overeating?</p>
+                <label><input type="radio" name="q5" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q5" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q5" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q5" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>6.</span> Over the last two weeks, how often have you felt bad about yourself – or that you are a failure or have let yourself or your family down?</p>
+                <label><input type="radio" name="q6" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q6" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q6" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q6" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>7.</span> Over the last two weeks, how often have you had trouble concentrating on things, such as reading the newspaper or watching television?</p>
+                <label><input type="radio" name="q7" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q7" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q7" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q7" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>8.</span> Over the last two weeks, how often have you felt restless or fidgety?</p>
+                <label><input type="radio" name="q8" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q8" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q8" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q8" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>9.</span> Over the last two weeks, how often have you felt that you are moving or speaking so slowly that other people could have noticed? Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual?</p>
+                <label><input type="radio" name="q9" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q9" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q9" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q9" value="nearly-every-day"> Nearly every day</label>
+            </div>
+            <div class="question">
+                <p><span>10.</span> Over the last two weeks, how often have you thought that you would be better off dead, or of hurting yourself in some way?</p>
+                <label><input type="radio" name="q10" value="not-at-all"> Not at all</label><br>
+                <label><input type="radio" name="q10" value="several-days"> Several days</label><br>
+                <label><input type="radio" name="q10" value="more-than-half-the-days"> More than half the days</label><br>
+                <label><input type="radio" name="q10" value="nearly-every-day"> Nearly every day</label>
+            </div>
         </div>
     </div>
-</div>
 </main>
 <footer>
-    <p>&copy; 2024 YourSite. All rights reserved.</p>
+    <p>&copy; 2024 Unity Health Connect. All rights reserved.</p>
 </footer>
+<script>
+    document.getElementById('takeQuizButton').addEventListener('click', function() {
+        var quiz = document.getElementById('quizContainer');
+        var intro = document.getElementById('introContainer');
+
+        // Show the quiz and hide the intro on the first click
+        quiz.style.display = 'block';
+        intro.style.display = 'none';
+    });
+</script>
 </body>
 </html>
